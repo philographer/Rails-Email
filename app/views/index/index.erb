@@ -1,0 +1,50 @@
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Dosis:500' rel='stylesheet' type='text/css'>
+  
+
+    <%= stylesheet_link_tag "index" %>
+<script> 
+    
+</script>
+
+</head>
+
+<body>
+    <!--
+  <h1>Dying Light Main Menu</h1>
+  -->
+  
+  <div id="menu">
+    <div class="buffer"></div>
+    <h2>Main Menu</h2>
+    <ul>
+      <li><span class="trim"><a href="index/mailing">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a></span><i class="fa fa-envelope" style="color:white;font-size:0.8em"> &nbsp;</i>Mailing<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="21" height="36" viewBox="0 0 21 36">
+  <path d="M0.004,25.709 C0.004,25.709 0.004,35.987 0.004,35.987 C0.004,35.987 20.986,18.000 20.986,18.000 C20.986,18.000 0.004,0.013 0.004,0.013 C0.004,0.013 0.004,10.291 0.004,10.291 C0.004,10.291 8.873,18.000 8.873,18.000 C8.873,18.000 0.004,25.709 0.004,25.709 Z" id="path-1" class="cls-2" fill-rule="evenodd"/>
+</svg></li><br/>
+      <li><span class="trim"><a href="users/sign_in">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a></span><i class="fa fa-unlock-alt" style="color:white;"> &nbsp;</i>Login<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="21" height="36" viewBox="0 0 21 36">
+  <path d="M0.004,25.709 C0.004,25.709 0.004,35.987 0.004,35.987 C0.004,35.987 20.986,18.000 20.986,18.000 C20.986,18.000 0.004,0.013 0.004,0.013 C0.004,0.013 0.004,10.291 0.004,10.291 C0.004,10.291 8.873,18.000 8.873,18.000 C8.873,18.000 0.004,25.709 0.004,25.709 Z" id="path-1" class="cls-2" fill-rule="evenodd"/>
+</svg></li><br/>
+      <li>
+          <span class="trim"><a href="users/sign_up">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a></span><i class="fa fa-sign-in" style="color:white;"> &nbsp;</i>SignUp<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="21" height="36" viewBox="0 0 21 36">
+  <path d="M0.004,25.709 C0.004,25.709 0.004,35.987 0.004,35.987 C0.004,35.987 20.986,18.000 20.986,18.000 C20.986,18.000 0.004,0.013 0.004,0.013 C0.004,0.013 0.004,10.291 0.004,10.291 C0.004,10.291 8.873,18.000 8.873,18.000 C8.873,18.000 0.004,25.709 0.004,25.709 Z" id="path-1" class="cls-2" fill-rule="evenodd"/>
+</svg></li><br/>
+      <li><span class="trim"><a onclick="history.go(-1);">  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;</a></span><i class="fa fa-chevron-left" style="color:white;"> &nbsp;</i>Previous<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="21" height="36" viewBox="0 0 21 36">
+  <path d="M0.004,25.709 C0.004,25.709 0.004,35.987 0.004,35.987 C0.004,35.987 20.986,18.000 20.986,18.000 C20.986,18.000 0.004,0.013 0.004,0.013 C0.004,0.013 0.004,10.291 0.004,10.291 C0.004,10.291 8.873,18.000 8.873,18.000 C8.873,18.000 0.004,25.709 0.004,25.709 Z" id="path-1" class="cls-2" fill-rule="evenodd"/>
+</svg></li><br/>
+<li><span class="trim"> <a href="<%= destroy_user_session_path %>" data-method="delete">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a/></span><i class="fa fa-sign-out" style="color:white;"> &nbsp;</i>logout<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="21" height="36" viewBox="0 0 21 36">
+  <path d="M0.004,25.709 C0.004,25.709 0.004,35.987 0.004,35.987 C0.004,35.987 20.986,18.000 20.986,18.000 C20.986,18.000 0.004,0.013 0.004,0.013 C0.004,0.013 0.004,10.291 0.004,10.291 C0.004,10.291 8.873,18.000 8.873,18.000 C8.873,18.000 0.004,25.709 0.004,25.709 Z" id="path-1" class="cls-2" fill-rule="evenodd"/>
+</svg></li>
+    </ul>
+  </div>
+  
+  <div align="center" style="color:white;">
+  <%- flash.each do |name, msg| -%>
+  <h1>
+    <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+  <%- end -%>
+  </h1>
+  </div>
+  
+  
+  
+</body>

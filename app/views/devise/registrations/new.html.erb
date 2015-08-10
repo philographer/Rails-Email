@@ -1,0 +1,74 @@
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Dosis:500' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <%= stylesheet_link_tag "signup" %>
+    <% 
+      if (user_session != nil)
+           redirect_to '/' 
+        end
+     %>
+<script> 
+    
+</script>
+
+<style>
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+</style>
+
+</head>
+
+<body>
+  <div class="row">
+  <div class="col-md-6">
+    <div id="menu">
+  <h3 style="margin:0.5cm"><i class="fa fa-user-plus" style="margin:0.5cm"></i> Sign up</h3>
+    <div class="buffer"></div>
+    <h1>SignUp Menu</h1>
+    <ul>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <div class="field">
+          <%= f.email_field :email, autofocus: true ,:placeholder => "E-mail"%>
+        </div>
+        <div class="field">
+         <%= f.text_field :nickname, :placeholder => "Nickname" %>
+        </div>
+        <div class="field">
+          <%= f.password_field :password, autocomplete: "off",:placeholder => "Password: 8Char Minimum" %>
+        </div>
+      
+        <div class="field">
+          <%= f.password_field :password_confirmation, autocomplete: "off",:placeholder => "Password Confirm" %>
+        </div>
+      
+        <div class="actions" style="background-color:e74c3c;">
+          <%= f.submit "Sign up" %>
+        </div>
+      <% end %>
+      <%= render "devise/shared/links" %>
+    </ul>
+  </div>
+  </div>
+  <div class="col-md-6">
+    
+          <div class="error_message">
+            <h5> 
+                  <div style="background: rgba(0,0,0,0.7);">
+                    <%= devise_error_messages! %>
+                  </div>
+            </h5>
+          </div>
+  </div>
+</div>
+
+  
+          
+  
+  
+  
+
+  
+  
+</body>
+
+

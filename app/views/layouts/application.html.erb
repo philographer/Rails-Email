@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Workspace</title>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <style>
+    #fixed-menu {
+                  width: 100%;
+                  background-color: #000000;
+                  position: fixed;
+                  top: -10px;
+                  left: 0px;
+                }
+    #fixed-menub {
+                 height: 50px; 
+                 background: #000; 
+                 width: 100%; 
+                 vertical-align: bottom; 
+                 bottom: 0; 
+                 position: fixed; 
+                }
+      
+              #p{
+                  font-family: 'Open Sans', sans-serif;
+                  font-size: 30px;
+                  color: #fff;
+                  text-align: center;
+                  position: absolute;
+                  width: 100%;
+                  top: 0px;
+                  background: #000;
+                  margin: 0px;
+                  padding: 15px 0px;
+                  z-index: 200;
+                }
+                
+  </style>
+</head>
+
+<body>
+  <div id="fixed-menu">
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <p id="p" style="color:whitel">
+          <% if current_user != nil %>
+           <%= current_user.email %> 
+          <% else  %>
+            Developed by Dev. Teemaero (inha)
+          <% end  %>
+        </p>
+      </div>
+      <div class="col-md-4"> <p>22</p> </div>
+    </div>
+  </div>
+
+<%= yield %>
+
+<div id="fixed-menub">
+  <div class="row">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4">
+      <p id="p">
+        <a href="" onclick="history.back()"><i class="fa fa-angle-double-left" style="color:white;"> Previous </i></a>
+        <a href="/"><i class="fa fa-sign-out" style="color:white;"> Main Page </i></a>
+        <a href="" onclick="history.forward()"><i class="fa fa-angle-double-right" style="color:white;"> Next</i></a>
+      </p>
+      </div>
+      <div class="col-md-4">
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

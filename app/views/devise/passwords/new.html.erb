@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>CSS Tips | Fixed Menu</title>
+    <!-- 부트스트랩 import -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//fonts/googleapis.com/earlyaccess/nanumpenscript.css"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- 부트스트랩 -->
+    
+    <style>
+       <script>
+        $(".user").focusin(function(){
+          $(".inputUserIcon").css("color", "#e74c3c");
+        }).focusout(function(){
+          $(".inputUserIcon").css("color", "white");
+        });
+        
+        $(".pass").focusin(function(){
+          $(".inputPassIcon").css("color", "#e74c3c");
+        }).focusout(function(){
+          $(".inputPassIcon").css("color", "white");
+        });
+    </script>
+    <style>
+       @import url(http://weloveiconfonts.com/api/?family=entypo);
+       @import url(http://fonts.googleapis.com/css?family=Roboto);
+
+      /* zocial */
+      [class*="entypo-"]:before {
+        font-family: 'entypo', sans-serif;
+      }
+      
+      *,
+      *:before,
+      *:after {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box; 
+      }
+      
+      
+      h2 {
+        color:rgba(255,255,255,.8);
+        margin-left:12px;
+      }
+      
+      body {
+        background: #272125;
+        font-family: 'Roboto', sans-serif;
+        color:#ffffff;
+        
+      }
+      
+      form {
+        position:relative;
+        margin: 50px auto;
+        width: 380px;
+        height: auto;
+      }
+      
+      input {
+        padding: 16px;
+        border-radius:7px;
+        border:0px;
+        background: rgba(255,255,255,.2);
+        display: block;
+        margin: 15px;
+        width: 300px;  
+        color:white;
+        font-size:18px;
+        height: 54px;
+      }
+      
+      input:focus {
+        outline-color: rgba(0,0,0,0);
+        background: rgba(255,255,255,.95);
+        color: #e74c3c;
+      }
+      
+      button {
+        float:bottom;
+        height: 50px;
+        width: 330px;
+        border: 0px;
+        background: #e74c3c;
+        border-radius:7px;
+        padding: 10px;
+        color:white;
+        font-size:22px;
+      }
+      
+      .inputUserIcon {
+        position:absolute;
+        top:68px;
+        right: 80px;
+        color:white;
+      }
+      
+      .inputPassIcon {
+        position:absolute;
+        top:136px;
+        right: 80px;
+        color:white;
+      }
+      
+      input::-webkit-input-placeholder {
+        color: white;
+      }
+      
+      input:focus::-webkit-input-placeholder {
+        color: #e74c3c;
+      }
+      
+      a{
+        font-size:20px;
+      }
+      
+      input[type="submit"]
+      {
+          background-color:#e74c3c;
+      }
+
+    </style>
+        
+    </style>
+  </head>
+  <body>
+    <br/><br/><br/>
+        
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+          <h2><i class="fa fa-envelope-o"></i> Forgot Your Pw?</h2>
+          <%= devise_error_messages! %>
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, :placeholder => "E-Mail address" %>
+          </div>
+        
+          <div class="actions">
+            <button class="submit">Send E-Mail </button>
+          </div>
+        <% end %>
+        
+        <%= render "devise/shared/links" %>
+        
+
+  </body>
+</html>

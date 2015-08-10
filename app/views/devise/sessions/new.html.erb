@@ -1,0 +1,64 @@
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Dosis:500' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag "login" %>
+<script> 
+    
+</script>
+
+<style>
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+</style>
+    <% 
+      if (user_session != nil)
+           redirect_to '/' 
+        end
+     %>
+
+</head>
+
+<body>
+  <div id="menu">
+    <div class="buffer"></div>
+    <h2>Login Menu</h2>
+    <ul>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <li style="margin:0.5cm;"><h3 style="margin:0.5cm;"><span class="entypo-login">Login</span>&nbsp; </h3></li>
+<button class="submit"><span class="entypo-lock-open"></span></button>
+
+  <div class="field">
+    <%= f.email_field :email, :placeholder => "E-mail" %>
+  </div>
+  <div class="field">
+    <%= f.password_field :password, autocomplete: "off", :placeholder => "Password" %>
+  </div>
+  
+   
+  <div class="row">
+    <div class="col-md-9"></div>
+    <div class="col-md-3"><%= render "devise/shared/links"%></div>
+  </div>
+  <br/>
+  <div align="center" style="color:white;">
+  <%- flash.each do |name, msg| -%>
+  <div style="background: rgba(0,0,0,0.4);">
+  <h1>
+    <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+  <%- end -%>
+  </h1>
+  </div>
+  </div>
+  
+  <% if devise_mapping.rememberable? -%>
+  <% end -%>
+  
+  
+  
+<% end %>
+    </ul>
+    
+  </div>
+  
+  
+</body>
+
